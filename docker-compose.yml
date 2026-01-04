@@ -2,10 +2,13 @@ version: '3'
 
 services:
   minecraft:
-    build: .
+    build:
+      context: .
+      args:
+        MINECRAFT_VERSION: "1.21.11"
     ports:
       - "54321:25565"
     environment:
-      - MINECRAFT_VERSION=1.16.5
+      - MINECRAFT_VERSION=1.21.11
     volumes:
       - ./data:/data
